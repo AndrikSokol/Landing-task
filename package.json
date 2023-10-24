@@ -1,0 +1,39 @@
+{
+  "name": "task3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndrikSokol/task3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndrikSokol/task3/issues"
+  },
+  "homepage": "https://github.com/AndrikSokol/task3#readme",
+  "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "css-loader": "^6.8.1",
+    "graceful-fs": "^4.2.11",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify-es": "^3.0.0",
+    "sass": "^1.69.0",
+    "scrollreveal": "^4.0.9",
+    "style-loader": "^3.3.3",
+    "webpack-stream": "^7.0.0"
+  },
+  "dependencies": {
+    "gulp-changed": "^4.0.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
