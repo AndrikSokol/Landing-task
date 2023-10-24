@@ -57,26 +57,16 @@ document.addEventListener("DOMContentLoaded", function () {
       buttonText.textContent = "en"; // Change the text back to "en"
     }
   });
-
-  const buttonsBurger = document.querySelectorAll(".button-burger");
-  const buttonBurgerOpen = document.querySelector(".button-burger--open");
-  const buttonBurgerClose = document.querySelector(".button-burger--close");
-  const bodyElement = document.body;
-
-  buttonsBurger.forEach((buttonBurger) => {
-    buttonBurger.addEventListener("click", () => {
-      const menuList = document.querySelector(".menu__list");
-      if (menuList.classList.contains("menu__list-open")) {
-        menuList.classList.remove("menu__list-open");
-        buttonBurgerOpen.style.display = "flex !important";
-        buttonBurgerClose.style.display = "none !important";
-        bodyElement.style.overflow = "auto";
-      } else {
-        menuList.classList.add("menu__list-open"); // Add the regular style
-        bodyElement.style.overflow = "hidden";
-        buttonBurgerOpen.style.display = "none !important";
-        buttonBurgerClose.style.display = "flex !important";
-      }
-    });
+  const headerBurgerElement = document.querySelector(".header__burger");
+  const menuListElement = document.querySelector(".menu__list");
+  headerBurgerElement.addEventListener("click", function () {
+    menuListElement.classList.toggle("menu__list--open");
+    if (menuListElement.classList.contains("menu__list--open")) {
+      document.body.style.overflow = "hidden";
+      headerBurgerElement.classList.add("header__burger-close");
+    } else {
+      document.body.style.overflow = "auto";
+      headerBurgerElement.classList.remove("header__burger-close");
+    }
   });
 });
