@@ -74,8 +74,9 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 100%;
     flex-direction: row;
-    padding: 24px 48px;
+    padding: 0 48px;
   }
 
   &__right {
@@ -145,6 +146,7 @@ ul {
     padding: 24px 0 48px 0;
   }
   &__button {
+    text-transform: uppercase;
     font-weight: 600;
     font-size: 24px;
     line-height: 32px;
@@ -413,7 +415,7 @@ ul {
 
 @media (max-width: 1840px) {
   .header__wrapper {
-    padding: 8px 0;
+    padding: 8px 20px;
   }
   .header {
     height: auto;
@@ -425,7 +427,8 @@ ul {
     border-width: 2px;
 
     &__wrapper {
-      padding: 4px 0;
+      padding: 4px 2px;
+      padding-bottom: 12px;
     }
     .social-media__title {
       padding-right: 20px;
@@ -436,7 +439,7 @@ ul {
     -webkit-mask: linear-gradient(white, transparent 30%);
   }
   .main {
-    height: calc(100vh - (54px + 94px + 16px));
+    height: calc(100vh - (88px + 68px + 16px));
   }
   .landing__title {
     font-size: 55px;
@@ -446,7 +449,7 @@ ul {
   }
   .landing__button {
     width: 320px;
-    font-size: 20px;
+    font-size: 16px;
     padding: 10px 18px;
   }
 
@@ -519,7 +522,6 @@ ul {
     margin: 0 10px;
     overflow: visible;
     border-width: 2px;
-    height: 56px;
 
     &__wrapper {
       padding: 10px 14px;
@@ -536,7 +538,6 @@ ul {
     flex-direction: column;
   }
   .landing__left {
-    width: 100%;
     text-align: center;
   }
   .landing__title {
@@ -561,7 +562,6 @@ ul {
     font-size: 18px;
     font-weight: 600;
     line-height: 22.5px;
-    width: 100%;
   }
   .button-sign-up {
     position: fixed;
@@ -576,6 +576,7 @@ ul {
     border-radius: 24px;
     padding: 13px 20px;
     border-radius: 24px;
+    opacity: 0;
     transform: translateX(-110%);
     transition: transform 0.2s ease-in-out;
   }
@@ -594,14 +595,19 @@ ul {
     line-height: 20px;
     text-align: center;
     z-index: 100;
+    opacity: 0;
     transform: translateX(-110%);
     transition: transform 0.2s ease-in-out;
   }
 
   .button-log-in.button-log-in--mobile {
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
     transform: translateX(0);
   }
   .button-sign-up.button-sign-up--mobile {
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
     transform: translateX(0);
   }
 
@@ -750,8 +756,9 @@ ul {
     z-index: 10;
     position: fixed;
     align-items: flex-start;
-    top: 66px;
+    top: 69px;
     left: 0;
+    opacity: 0;
     transform: translateX(-100%);
     transition: transform 0.2s ease-in-out;
     width: 100vw;
@@ -765,6 +772,8 @@ ul {
     }
   }
   .menu__list--open {
+    transition: opacity 0.2s ease-in-out;
+    opacity: 1;
     transform: translateX(0%);
   }
 }
@@ -772,7 +781,6 @@ ul {
 @media (max-width: 700px) {
   .footer {
     height: auto;
-    width: 100%;
     font-size: 14px;
     border-width: 2px;
     border-bottom: none;
@@ -812,11 +820,5 @@ ul {
       gap: 8px;
       align-items: center;
     }
-  }
-}
-
-@media (max-width: 530px) {
-  .blog__wrapper {
-    width: 90%;
   }
 }
