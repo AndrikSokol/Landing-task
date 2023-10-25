@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!buttonLang) return console.log("error to find btn");
   buttonLang.addEventListener("click", function () {
     if (buttonText.textContent === "en") {
-      buttonText.textContent = "рус";
+      buttonText.textContent = "ru";
     } else {
       buttonText.textContent = "en";
     }
