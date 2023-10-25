@@ -47,26 +47,32 @@ document.addEventListener("DOMContentLoaded", function () {
   duplicateSVG("lines__third");
 
   const buttonLang = document.querySelector(".button-lang");
-  const buttonText = document.querySelector(".button-lang__text");
+  const buttonText = document.querySelector(".button-lang-text");
   if (!buttonLang) return console.log("error to find btn");
-
   buttonLang.addEventListener("click", function () {
     if (buttonText.textContent === "en") {
-      buttonText.textContent = "рус"; // Change the text to "рус"
+      buttonText.textContent = "рус";
     } else {
-      buttonText.textContent = "en"; // Change the text back to "en"
+      buttonText.textContent = "en";
     }
   });
+
   const headerBurgerElement = document.querySelector(".header__burger");
   const menuListElement = document.querySelector(".menu__list");
+  const buttonSignUpElement = document.querySelector(".button-sign-up");
+  const buttonLogInElement = document.querySelector(".button-log-in");
   headerBurgerElement.addEventListener("click", function () {
     menuListElement.classList.toggle("menu__list--open");
     if (menuListElement.classList.contains("menu__list--open")) {
       document.body.style.overflow = "hidden";
       headerBurgerElement.classList.add("header__burger-close");
+      buttonSignUpElement.classList.add("button-sign-up--mobile");
+      buttonLogInElement.classList.add("button-log-in--mobile");
     } else {
       document.body.style.overflow = "auto";
       headerBurgerElement.classList.remove("header__burger-close");
+      buttonSignUpElement.classList.remove("button-sign-up--mobile");
+      buttonLogInElement.classList.remove("button-log-in--mobile");
     }
   });
 });
