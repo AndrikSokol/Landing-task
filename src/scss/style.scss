@@ -75,10 +75,16 @@ ul {
     justify-content: space-between;
     align-items: center;
     height: 100%;
+    gap: 4px;
     flex-direction: row;
     padding: 0 48px;
   }
 
+  &__left {
+    max-width: 270px;
+    display: flex;
+    flex-grow: 1;
+  }
   &__right {
     display: flex;
     align-items: center;
@@ -144,6 +150,7 @@ ul {
     font-weight: 500;
     font-size: 32px;
     padding: 24px 0 48px 0;
+    white-space: nowrap;
   }
   &__button {
     text-transform: uppercase;
@@ -341,7 +348,7 @@ ul {
 .landing__center {
   height: 100%;
   overflow-y: hidden;
-  width: 100%;
+  width: 44%;
   margin: 0 auto;
 }
 .lines {
@@ -349,7 +356,7 @@ ul {
   justify-content: center;
   align-items: flex-start;
   gap: 17px;
-  -webkit-mask: linear-gradient(white, transparent 28%);
+  -webkit-mask: linear-gradient(white, transparent 35%);
 
   #dollar-vertical {
     display: flex;
@@ -413,6 +420,11 @@ ul {
   }
 }
 
+@media (min-width: 2000px) and (max-width: 2600px) {
+  .lines {
+    -webkit-mask: linear-gradient(white, transparent 45%);
+  }
+}
 @media (max-width: 1840px) {
   .header__wrapper {
     padding: 8px 20px;
@@ -471,19 +483,20 @@ ul {
     font-size: 20px;
   }
 }
-@media (max-width: 1440px) {
+
+@media (max-width: 1367px) {
   .lines {
     -webkit-mask: linear-gradient(white, transparent 15%);
   }
-}
-
-@media (max-width: 1320px) {
-  .lines__first {
-    display: none;
+  .landing__subtitle {
+    white-space: wrap;
+  }
+  .landing__center {
+    width: 100%;
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1030px) {
   .header__right {
     gap: 2px;
   }
@@ -749,6 +762,7 @@ ul {
 
   .menu__list {
     height: 100vh;
+    overflow: scroll;
     background: #110a1d;
     display: flex;
     flex-direction: column;
@@ -763,7 +777,6 @@ ul {
     transition: transform 0.2s ease-in-out;
     width: 100vw;
     padding: 30px 10px;
-
     .menu__item {
       border-radius: 28px;
       padding: 13px 20px;
@@ -820,5 +833,11 @@ ul {
       gap: 8px;
       align-items: center;
     }
+  }
+}
+
+@media (max-width: 320px) {
+  .blog__wrapper {
+    width: 300px;
   }
 }
